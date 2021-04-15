@@ -78,7 +78,7 @@ export default class InvitationLogs extends Component {
         let refresh = true
         return (
             <SafeAreaView style={{ flex: 1 }}>
-                <View style={{ flex: 1, backgroundColor: '#2d2d3a' }}>
+                <View style={{ flex: 1, backgroundColor: "#faf9fd" }}>
                     <Header heading="Invitation Logs" backfunc={[]} {...this.props} textalign='center' left={Scales.deviceWidth * 0.08} back={true} />
                     <View style={{ flex: 1 }}>
                         {this.state.logs != 0 ? <FlatList
@@ -124,52 +124,8 @@ class Logs extends Component {
     render() {
         let created_date = String(this.props.data.created_date).split(",")[0]
         return (
-            <View style={{ flex:1, backgroundColor: '#2d2d3a', paddingLeft:'5%', paddingRight:'5%',}}>
-
-                {/* DASH AT TOP OF EVERY LOG */}
-                <View style={{width:Scales.deviceWidth*0.004, height:Scales.deviceWidth*0.025, backgroundColor:"#c7c7c7", alignSelf: "center", marginBottom:2}}></View>
-
-                <View style={{ borderRadius: 5 }}>
-                    {/* THE ICON OF THE PERSON INVITED */}
-                    <View style={{ marginBottom: '-2%', width: Scales.deviceHeight * 0.08, justifyContent: "center", height: Scales.deviceHeight * 0.08, borderRadius: (Scales.deviceHeight * 0.08) / 2, alignSelf: "center", backgroundColor: '#13d7a6', borderWidth: 2, elevation: 1 }}>
-                        <Text style={{ color: "#2d2d3a", fontSize: 18, alignSelf: 'center', textTransform: "capitalize" }}>{this.props.data.name.slice(0, 2)}</Text>
-                    </View>
-
-                    <View style={{ backgroundColor: '#3d3d46', marginTop: '-7%', borderRadius: 5, padding: '5%' }}>
-                        {/* INTERVIEW MODE PRERECORDED OR LIVE */}
-                        <View style={{ borderRadius: 10, justifyContent: "center", }}>
-                            <Text style={{ maxWidth: Scales.deviceWidth * 0.27, minHeight: Scales.deviceHeight * 0.025, fontFamily: "roboto-regular", textAlign: "left", borderRadius: 10, color: "#2d2d3a", backgroundColor: 'white', fontSize: Scales.moderateScale(9), padding: 2.5, textAlign: "center" }}>{this.props.data.interview_mode == 1 ? "Pre-recorded Interview" : "Live-Interview"}</Text>
-                        </View>
-
-                        {/* VAROIUS DETAILS THAT NEED TO BE PRESENT IN THE LOG CARD */}
-                        <View style={{ minHeight: Scales.deviceHeight * 0.04, justifyContent: "center" }}>
-                            <Text style={{ fontFamily: "roboto-medium", textTransform: "capitalize", color: "white", fontSize: Scales.moderateScale(16) }}>{this.props.data.name} <Text style={{ fontFamily: "roboto-regular", color: "white", textTransform: "lowercase", fontSize: Scales.moderateScale(14) }}>was invited for </Text>{this.props.data.job_name}</Text>
-                        </View>
-                        <View style={{ width: Scales.deviceWidth * 0.53, height: Scales.deviceHeight * 0.03, alignItems: "center", justifyContent: "space-between", flexDirection: "row" }}>
-                            <View style={{ width: Scales.deviceWidth * 0.25, height: Scales.deviceHeight * 0.03, flexDirection: "row", alignItems: "center" }}>
-                                <Image source={require('../assets/JobmaIcons/calendar-lightBlue.png')} style={{ width: 14, height: 14 }} resizeMode='contain'></Image>
-                                <Text style={{ color: "#8b8b8b", fontSize: Scales.moderateScale(12), fontFamily: "roboto-regular", paddingTop: 2, paddingLeft: 6 }}>{moment(created_date).format(this.state.date_format)}</Text>
-                            </View>
-                            <View style={{ width: Scales.deviceWidth * 0.25, height: Scales.deviceHeight * 0.03, flexDirection: "row", alignItems: 'center' }}>
-                                <Image source={require('../assets/Images/job_listing/public.png')} style={{ width: 14, height: 14 }} resizeMode='contain'></Image>
-                                <Text style={{ color: "#8b8b8b", fontSize: Scales.moderateScale(12), paddingTop: 2, fontFamily: "roboto-regular", paddingLeft: 6 }}>{(String(this.props.data.created_date).split(",")[1]).slice(1, (String(this.props.data.created_date).split(",")[1]).length)}</Text>
-                            </View>
-                        </View>
-                        <View style={{ width: Scales.deviceWidth * 0.71, minHeight: Scales.deviceHeight * 0.03, flexDirection: "row", alignItems: 'center' }}>
-                            <Image source={require('../assets/JobmaIcons/email.png')} style={{ width: 14, height: 14 }} resizeMode='contain'></Image>
-                            <Text style={{ color: "#8b8b8b", fontSize: Scales.moderateScale(12), paddingTop: 2, fontFamily: "roboto-regular", paddingLeft: 6 }}>{String(this.props.data.email)}</Text>
-                        </View>
-                        <View style={{ width: Scales.deviceWidth * 0.71, }}>
-                            <Text style={{ color: "white", fontSize: Scales.moderateScale(12), paddingTop: 2, fontFamily: "roboto-regular", }}>Invited by: <Text style={{ fontFamily: "roboto-regular", fontSize: Scales.moderateScale(12), color: '#8b8b8b' }}>{String(this.props.data.employer_email)}</Text></Text>
-                            {this.props.data.interview_mode == 1 ? <Text style={{ color: "white", fontSize: Scales.moderateScale(12), paddingTop: 2, fontFamily: "roboto-regular", paddingLeft: 3 }}>Interview kit : <Text style={{ fontFamily: "roboto-regular", fontSize: Scales.moderateScale(12), color: '#8b8b8b' }}>{String(this.props.data.kit_name)}</Text></Text> : null}
-                        </View>
-                    </View>
-                    <View style={{ marginTop: '-3%', marginRight: 7, padding: 5, paddingTop: 4, paddingBottom: 2, backgroundColor: '#52526c', justifyContent: 'center', borderRadius: 5, alignSelf: 'flex-end', alignItems: 'center' }}>
-                        <Text style={{ color: 'white', fontFamily: "roboto-regular", textAlign: 'center', borderRadius: 2, fontSize: 10, }}>{this.props.data.msg}</Text>
-                    </View>
-                </View>
-
-                {/* <View style={{ alignItems: "center", flexDirection: "row" }}>
+            <View style={{ width: Scales.deviceWidth * 1.0, minHeight: Scales.deviceHeight * 0.26, backgroundColor: '#faf9fd', }}>
+                <View style={{ alignItems: "center", flexDirection: "row" }}>
                     <View style={{ width: Scales.deviceWidth * 0.22, minHeight: Scales.deviceHeight * 0.26, justifyContent: "center", }}>
                         <View style={{ height: Scales.deviceWidth * 0.16, borderWidth: this.props.index != 0 ? 0.8 : 0, alignSelf: "center", borderColor: "#c7c7c7", borderRadius: 0.01, borderStyle: "dashed" }}>
 
@@ -222,7 +178,7 @@ class Logs extends Component {
 
                     </View>
 
-                </View> */}
+                </View>
 
             </View>
         )

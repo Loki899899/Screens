@@ -11,6 +11,6 @@ web-build/
 web-report/
 android/*
 ios/*
-
+.history/*
 # macOS
 .DS_Store

@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "Jobma Employer",
+    "androidStatusBar": {},
+    "slug": "Employer",
+    "privacy": "public",
+    "sdkVersion": "36.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/Images/button.png",
+    "splash": {
+      "image": "./assets/Images/splash-screen.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#fff",
+      "width": "100%",
+      "height": "100%"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.ashish",
+      "versionCode": 1
+    },
+    "entryPoint": "node_modules/expo/AppEntry.js"
+  },
+  "displayName": "Jobma Hire",
+  "name": "Jobma Hire"
+}
